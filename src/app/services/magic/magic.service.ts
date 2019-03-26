@@ -8,7 +8,9 @@ export class MagicService {
 
   constructor(private http: HttpClient) { }
 
-  getData() {
+  getMagic() {
     return this.http.get('https://api.magicthegathering.io/v1/cards');
+    //https://docs.magicthegathering.io/
+    //https://api.magicthegathering.io/v1/cards?name=Ajani,+Adversary+of+Tyrants
   }
 }

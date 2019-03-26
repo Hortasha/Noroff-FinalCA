@@ -1,3 +1,6 @@
-<p>
-  cards-page works!
-</p>
+<div *ngIf="allCards.length > 0">
+  <app-card 
+    *ngFor="let card of allCards"
+    [card]="card">
+  </app-card>
+</div>

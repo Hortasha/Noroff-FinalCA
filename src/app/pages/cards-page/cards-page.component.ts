@@ -12,12 +12,12 @@ export class CardsPageComponent implements OnInit {
   constructor(private magicService: MagicService) { }
 
   ngOnInit() {
-    this.magicService.getData().subscribe((response:any) => {
-      this.allCards = response;
-      console.log(this.allCards);
+    this.magicService.getMagic().subscribe((response:any) => {
+      this.allCards = response.cards.filter(card => {
+        return card.imageUrl
+      });
     }, error => {
       console.error(error);
     })
   }
-
 }

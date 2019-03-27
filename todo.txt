@@ -1,0 +1,2 @@
+Remember TODO:
+- Add "Loading" when waiting for API.

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Services
 import { MagicService } from './services/magic/magic.service';
@@ -43,7 +44,8 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [MagicService, LoginService, ContactService],
   bootstrap: [AppComponent]

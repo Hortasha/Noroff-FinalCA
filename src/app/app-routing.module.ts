@@ -10,7 +10,6 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { CardSpecificPageComponent } from './pages/card-specific-page/card-specific-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'cards', component: CardsPageComponent },

@@ -13,11 +13,18 @@ export class CardsPageComponent implements OnInit {
 
   ngOnInit() {
     this.magicService.getMagic().subscribe((response:any) => {
-      this.allCards = response.cards.filter(card => {
-        return card.imageUrl
-      });
+      this.allCards = response.cards.filter(card => card.imageUrl);
     }, error => {
       console.error(error);
     })
   }
+
+  
+  search(para) {
+    this.magicService.getSearch(para).subscribe((response:any) => {
+      this.allCards = response.cards.filter(card => card.imageUrl);
+    }, error => {
+      console.error(error);
+    })
+  }  
 }

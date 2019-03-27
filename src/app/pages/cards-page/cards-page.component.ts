@@ -23,6 +23,7 @@ export class CardsPageComponent implements OnInit {
   search(para) {
     this.magicService.getSearch(para).subscribe((response:any) => {
       this.allCards = response.cards.filter(card => card.imageUrl);
+      console.log(this.allCards);
     }, error => {
       console.error(error);
     })

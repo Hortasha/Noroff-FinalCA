@@ -1,3 +1,4 @@
-<p>
-  text-toggle works!
-</p>
+<div>
+  <div (click)="display=!display">Click me</div>
+  <div [ngClass]="display ? 'text--display' : 'text--hide'">This is some text</div>
+</div>

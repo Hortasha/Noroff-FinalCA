@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TextToggleComponent implements OnInit {
 
-  constructor() { }
+  display: boolean;
+
+  constructor() {
+    this.display = false;
+  }
 
   ngOnInit() {
+  }
+
+  toggle() {
+    this.display = !this.display;
   }
 
 }

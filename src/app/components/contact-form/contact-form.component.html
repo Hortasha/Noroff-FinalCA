@@ -1,3 +1,18 @@
-<p>
-  contact-form works!
-</p>
+<h3>Contact Us</h3>
+<form [formGroup]="form" (ngSubmit)="onSend(form.value)">
+  <p>First Name:</p>
+  <input type="text" formControlName="fName"><br>
+  <!-- <p *ngIf="fNameValid">Minimum 2 characters of a-z</p> -->
+
+  <p>Last Name:</p>
+  <input type="text" formControlName="lName"><br>
+
+  <p>Telephone:</p>
+  <input type="text" formControlName="phone"><br>
+
+  <p>Email:</p>
+  <input type="text" formControlName="mail"><br>
+  <button type="submit">Send</button>
+</form>
+
+<h2>{{message}}</h2>

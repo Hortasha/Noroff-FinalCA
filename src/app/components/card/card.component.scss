@@ -1,0 +1,33 @@
+.card-container {
+    width: 230px;
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    border: lightgray 1px solid;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    
+    &:hover {
+        box-shadow: 5px 5px 10px rgba(77, 77, 77, 0.3);
+    }
+
+    & img {
+        margin-top: 5px;
+    }
+
+    & button {
+        border: none;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        background-color: rgb(68, 109, 155);
+        border-radius: 5px;
+        font-weight: 800;
+        color: white;
+
+        &:hover {
+            background-color: darken(lightblue, 15%);
+        }
+    }
+}

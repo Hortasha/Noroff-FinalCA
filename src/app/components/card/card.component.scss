@@ -1,15 +1,19 @@
 .card-container {
-    width: 230px;
     display: inline-block;
+    width: 20%;
+}
+
+.card {
+    width: 230px;
     text-align: center;
-    margin: 20px;
+    margin: 0 auto;
     border: lightgray 1px solid;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     
     &:hover {
-        box-shadow: 5px 5px 10px rgba(77, 77, 77, 0.3);
+        box-shadow: 5px 5px 10px rgba(8, 8, 8, 0.5);
     }
 
     & img {
@@ -29,5 +33,33 @@
         &:hover {
             background-color: darken(lightblue, 15%);
         }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .card-container {
+        display: inline-block;
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .card-container {
+        display: inline-block;
+        width: 33.333%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .card-container {
+        display: inline-block;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .card-container {
+        display: inline-block;
+        width: 100%;
     }
 }

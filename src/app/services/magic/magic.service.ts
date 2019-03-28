@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MagicService {
 
+  selectedCard: any;
+
   constructor(private http: HttpClient) { }
 
   getMagic() {
@@ -17,7 +19,15 @@ export class MagicService {
   getSearch(parameters) {
     let filteredRarity = parameters.rarity.filter(item => (item.length > 0));
     let rarity = filteredRarity.join('|')
-    let name = parameters.searchValue.split(" ").join("+").trim();
+    let name = parameters.searchValue.trim().split(" ").join("+");
     return this.http.get(`https://api.magicthegathering.io/v1/cards?name=${name}&rarity=${rarity}`)
+  }
+
+  setCard(card) {
+    this.selectedCard = card;
+  }
+
+  getCard() {
+    return this.selectedCard;
   }
 }

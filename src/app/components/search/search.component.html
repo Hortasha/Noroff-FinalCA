@@ -1,33 +1,35 @@
-<input (keyup)="onKey($event)" type="text" placeholder="Search by card name"><br>
-<input
-  [checked]="searchParameters.rarity[0]"
-  (change)="(searchParameters.rarity[0] === '') ? searchParameters.rarity[0] = 'common' : searchParameters.rarity[0] = ''"
-  type="checkbox"
-  checked>
-Common
+<form>
+  <input (keyup)="onKey($event)" type="text" placeholder="Search by card name"><br>
+  <input
+    [checked]="searchParameters.rarity[0]"
+    (change)="(searchParameters.rarity[0] === '') ? searchParameters.rarity[0] = 'common' : searchParameters.rarity[0] = ''"
+    type="checkbox"
+    checked>
+  Common
 
-<input 
-  [checked]="searchParameters.rarity[1]"
-  (change)="(searchParameters.rarity[1] === '') ? searchParameters.rarity[1] = 'common' : searchParameters.rarity[1] = ''"
-  type="checkbox"
-  checked>
-Uncommon
+  <input 
+    [checked]="searchParameters.rarity[1]"
+    (change)="(searchParameters.rarity[1] === '') ? searchParameters.rarity[1] = 'common' : searchParameters.rarity[1] = ''"
+    type="checkbox"
+    checked>
+  Uncommon
 
-<input
-  [checked]="searchParameters.rarity[2]"
-  (change)="(searchParameters.rarity[2] === '') ? searchParameters.rarity[2] = 'common' : searchParameters.rarity[2] = ''"
-  type="checkbox"
-  checked>
-Rare
+  <input
+    [checked]="searchParameters.rarity[2]"
+    (change)="(searchParameters.rarity[2] === '') ? searchParameters.rarity[2] = 'common' : searchParameters.rarity[2] = ''"
+    type="checkbox"
+    checked>
+  Rare
 
-<input
-  [checked]="searchParameters.rarity[3]"
-  (change)="(searchParameters.rarity[3] === '') ? searchParameters.rarity[3] = 'common' : searchParameters.rarity[3] = ''"
-  type="checkbox"
-  checked>
-Mythic
+  <input
+    [checked]="searchParameters.rarity[3]"
+    (change)="(searchParameters.rarity[3] === '') ? searchParameters.rarity[3] = 'common' : searchParameters.rarity[3] = ''"
+    type="checkbox"
+    checked>
+  Mythic
 
-<br>
-<button (click)="onSubmit()">
-  Search
-</button>
+  <br>
+  <button (click)="onSubmit()" type="submit">
+    Search
+  </button>
+</form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MagicService } from 'src/app/services/magic/magic.service';
 
 @Component({
   selector: 'app-selected-card',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectedCardComponent implements OnInit {
 
-  constructor() { }
+  card: any;
+
+  constructor(
+    private magicService: MagicService
+  ) { }
 
   ngOnInit() {
+    this.card = this.magicService.getCard();
   }
 
 }

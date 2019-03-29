@@ -1,6 +1,7 @@
 <div class="card-container">
     <div class="card" (click)="viewCard()">
-        <img [src]="card.imageUrl" alt="Card">
-        <p>Rarity: {{card.rarity}}</p>
+        <h4>{{card.name}}</h4>
+        <img [src]="card.imageUrl" alt="{{card.name}}">
+        <p><b>Rarity:</b> {{card.rarity}}</p>
     </div>
 </div>

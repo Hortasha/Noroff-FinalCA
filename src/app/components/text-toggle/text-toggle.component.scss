@@ -1,9 +1,30 @@
 .text {
-    &--display {
+    &-display {
         display: block;
     }
 
-    &--hide {
+    &-hide {
         display: none;
+    }
+}
+
+.dropdown {
+    border: gray 1px solid;
+    
+    &-head {
+        width: 100%;
+        background-color: #F96167;
+        color: white;
+        font-size: 20px;
+        padding: 20px 0;
+        text-align: center;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &-body {
+        padding: 10px;
     }
 }

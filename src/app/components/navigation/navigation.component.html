@@ -1,3 +1,10 @@
-<button (click)="goCards()">Cards</button>
-<button (click)="goAbout()">About</button>
-<button (click)="goContact()">Contact</button>
+<div class="navigation">
+    <div class="navigation-title">
+        <h1 (click)="goCards()"><i class="fas fa-gamepad"></i> Magic: Card Game</h1>
+    </div>
+    <div class="navigation-links">
+        <button (click)="goCards()" [ngClass]="{'navigation-links-active': (router.url == '/cards')}">Cards</button>
+        <button (click)="goAbout()" [ngClass]="{'navigation-links-active': (router.url == '/about')}">About</button>
+        <button (click)="goContact()" [ngClass]="{'navigation-links-active': (router.url == '/contact')}">Contact</button>
+    </div>
+</div>

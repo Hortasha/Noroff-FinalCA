@@ -1,32 +1,36 @@
-<form>
-  <input (keyup)="onKey($event)" type="text" placeholder="Search by card name"><br>
+<form class="form">
+  <input class="form-text" (keyup)="onKey($event)" type="text" placeholder="Search by card name"><br>
   <input
     [checked]="searchParameters.rarity[0]"
     (change)="(searchParameters.rarity[0] === '') ? searchParameters.rarity[0] = 'common' : searchParameters.rarity[0] = ''"
     type="checkbox"
+    id="common"
     checked>
-  Common
+  <Label class="form-checkbox" for="common">Common</Label>
 
   <input 
     [checked]="searchParameters.rarity[1]"
     (change)="(searchParameters.rarity[1] === '') ? searchParameters.rarity[1] = 'common' : searchParameters.rarity[1] = ''"
     type="checkbox"
+    id="uncommon"
     checked>
-  Uncommon
+  <Label class="form-checkbox" for="uncommon">Uncommon</Label>
 
   <input
     [checked]="searchParameters.rarity[2]"
     (change)="(searchParameters.rarity[2] === '') ? searchParameters.rarity[2] = 'common' : searchParameters.rarity[2] = ''"
     type="checkbox"
+    id="rare"
     checked>
-  Rare
+  <Label class="form-checkbox" for="rare">Rare</Label>
 
   <input
     [checked]="searchParameters.rarity[3]"
     (change)="(searchParameters.rarity[3] === '') ? searchParameters.rarity[3] = 'common' : searchParameters.rarity[3] = ''"
     type="checkbox"
+    id="mythic"
     checked>
-  Mythic
+  <Label class="form-checkbox" for="mythic">Mythic</Label>
 
   <br>
   <button (click)="onSubmit()" type="submit">

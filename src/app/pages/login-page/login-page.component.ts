@@ -17,6 +17,7 @@ export class LoginPageComponent implements OnInit {
 
   login(loginSuccess: boolean) {
     if(!loginSuccess) {
+      
     } else {
       this.router.navigate(['cards']);
     }

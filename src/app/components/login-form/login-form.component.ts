@@ -11,6 +11,7 @@ import { AccountModel } from 'src/app/models/account.model';
 export class LoginFormComponent implements OnInit {
   @Output() onLoginUser: EventEmitter<boolean>;
   form: FormGroup;
+  showError: boolean = false;
 
   constructor(private loginService: LoginService) {
     this.onLoginUser = new EventEmitter<boolean>();
@@ -28,6 +29,8 @@ export class LoginFormComponent implements OnInit {
       this.loginService.startSession();
 
       this.onLoginUser.emit(true);
+    } else {
+      this.showError = true;
     }
   }
 

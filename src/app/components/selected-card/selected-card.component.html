@@ -1,6 +1,24 @@
-<div class="card-container">
-    <div class="card">
+<div class="card">
+    <div class="card-img">
         <img [src]="card.imageUrl" alt="Card">
-        <p>Rarity: {{card.rarity}}</p>
+    </div>
+    <div class="card-info">
+        <h2>{{card.name}}</h2>
+        <p><b>Info: </b> {{card.originalText}}</p>
+        <p><b>Rarity:</b> {{card.rarity}}</p>
+        <p *ngIf="card.subtypes.length !== 0"><b>Subtypes:</b> {{card.subtypes.join(", ")}}</p>
+        <p *ngIf="card.types.length !== 0"><b>Types:</b> {{card.types.join(", ")}}</p>
+        <p *ngIf="card.manaCost"><b>Mana:</b> {{mana}}</p>
+    </div>
+    <div class="card-help">
+        <p><b>Mana Help</b></p>
+        <ul>
+            <li>W: White</li>
+            <li>U: Blue</li>
+            <li>B: Black</li>
+            <li>R: Red</li>
+            <li>G: Green</li>
+            <li>C: None</li>
+        </ul>
     </div>
 </div>

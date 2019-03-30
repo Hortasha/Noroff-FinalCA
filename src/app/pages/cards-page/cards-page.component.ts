@@ -8,12 +8,15 @@ import { MagicService } from 'src/app/services/magic/magic.service';
 })
 export class CardsPageComponent implements OnInit {
   allCards: object[] = [];
+  loading: boolean;
 
   constructor(private magicService: MagicService) { }
 
   ngOnInit() {
+    this.loading = true;
     this.magicService.getMagic().subscribe((response:any) => {
       this.allCards = response.cards.filter(card => card.imageUrl);
+      this.loading = false;
     }, error => {
       console.error(error);
     })
@@ -21,9 +24,11 @@ export class CardsPageComponent implements OnInit {
 
   
   search(para) {
+    this.loading = true;
+    this.allCards = [];
     this.magicService.getSearch(para).subscribe((response:any) => {
       this.allCards = response.cards.filter(card => card.imageUrl);
-      console.log(this.allCards);
+      this.loading = false;
     }, error => {
       console.error(error);
     })

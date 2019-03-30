@@ -28,7 +28,6 @@ export class SelectedCardComponent implements OnInit {
     let manaList = mana.split(manaRegex).filter(item => item !== "")
     if(parseInt(manaList[0])) {
       let manaNum = parseInt(manaList[0]);
-      console.log(manaNum)
       manaNum += manaList.length - 1;
       manaList.shift();
       this.mana += manaNum + " mana. Including: "

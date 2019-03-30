@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactPageComponent implements OnInit {
 
+  displayForm: boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  sendt(event) {
+    this.displayForm = event;
   }
 
 }

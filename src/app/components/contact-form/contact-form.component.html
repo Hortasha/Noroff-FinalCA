@@ -1,18 +1,46 @@
-<h3>Contact Us</h3>
 <form [formGroup]="form" (ngSubmit)="onSend(form.value)">
-  <p>First Name:</p>
-  <input type="text" formControlName="fName"><br>
-  <!-- <p *ngIf="fNameValid">Minimum 2 characters of a-z</p> -->
+  
+  <div class="form-section">
+    <label for="fName">First Name:</label><br>
+    <input type="text" formControlName="fName" id="fName"><br>
+    <span *ngIf="!formValid[0]">
+      - Minimum 2 letters<br>
+      - Just letters from a-z<br>
+      - Can not contain numbers
+    </span>
+  </div>
 
-  <p>Last Name:</p>
-  <input type="text" formControlName="lName"><br>
+  <div class="form-section">
+    <label for="lName">Last Name:</label><br>
+    <input type="text" formControlName="lName" id="lName"><br>
+    <span *ngIf="!formValid[1]">
+      - Minimum 2 letters<br>
+      - Just letters from a-z<br>
+      - Can not contain numbers
+    </span>
+  </div>
 
-  <p>Telephone:</p>
-  <input type="text" formControlName="phone"><br>
+  <div class="form-section">
+    <label for="phone">Telephone:</label><br>
+    <input type="text" formControlName="phone" id="phone"><br>
+    <span *ngIf="!formValid[2]">
+      - Countrycode is optional<br>
+      - Can not contain letters<br>
+      - Can contain spaces, dashes or periods in number.
+    </span>
+  </div>
 
-  <p>Email:</p>
-  <input type="text" formControlName="mail"><br>
-  <button type="submit">Send</button>
+  <div class="form-section">
+    <label for="mail">Email:</label><br>
+    <input type="text" formControlName="mail" id="mail"><br>
+    <span *ngIf="!formValid[3]">
+      - Must be written in the form of a mail address.<br>
+      - example: name@domain.com
+    </span>
+  </div>
+
+  <div class="form-section">
+    <button type="submit">Send</button>
+    <h2>{{message}}</h2>
+  </div>
 </form>
-
-<h2>{{message}}</h2>

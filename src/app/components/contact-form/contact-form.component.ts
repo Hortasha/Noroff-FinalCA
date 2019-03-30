@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ContactService } from 'src/app/services/contact/contact.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -10,9 +10,12 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ContactFormComponent implements OnInit {
 
   form: FormGroup;
-  message: string;
+  @Output() sendContact: EventEmitter<boolean>;
+  formValid: boolean[] = [true, true, true, true];
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService) {
+    this.sendContact = new EventEmitter<boolean>();
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -24,12 +27,10 @@ export class ContactFormComponent implements OnInit {
   }
 
   onSend(formValues: any) {
-    let validated = this.contactService.validation(formValues);
-    if(validated.length === 0) {
-      this.message = "Message Sendt";
-    } else {
-      this.message = validated;
+    this.formValid = this.contactService.validation(formValues);
+    
+    if(this.formValid[4]) {
+      this.sendContact.emit(false);
     }
   }
-
 }

@@ -1,5 +1,4 @@
 Remember TODO:
 - Add "Loading" when waiting for API.
 - If specific card is not catched make sure to fetch again from api.
-- Error handling for forms
 - Implement advanced search.

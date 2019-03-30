@@ -8,21 +8,25 @@ export class ContactService {
   constructor() { }
 
   validation(formValues) {
-    let valid: string = "";
-    if((/^[a-z]{2,}$/i).test(formValues.fName) === false) {
-      valid = "First name must be at least 2 characters long";
+    let valid: boolean[] = [true, true, true, true, true];
+    if((/^[a-z]{2,}$/i).test(formValues.fName) === false || formValues.fName === null) {
+      valid[0] = false;
+      valid[4] = false;
     }
 
-    if((/^[a-z]{2,}$/i).test(formValues.lName) === false) {
-      valid = "Last name must be at least 2 characters long";
+    if((/^[a-z]{2,}$/i).test(formValues.lName) === false || formValues.lName === null) {
+      valid[1] = false;
+      valid[4] = false;
     }
 
     if((/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/).test(formValues.phone) === false) {
-      valid = "Make sure phone number is valid";
+      valid[2] = false;
+      valid[4] = false;
     }
 
     if((/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm).test(formValues.mail) === false) {
-      valid = "Check that your email is valid";
+      valid[3] = false;
+      valid[4] = false;
     }
     return valid;
   }

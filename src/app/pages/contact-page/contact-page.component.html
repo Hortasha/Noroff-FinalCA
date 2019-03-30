@@ -2,6 +2,7 @@
 <div class="container">
 
     <h1 class="title">Contact</h1>
-
-    <app-contact-form></app-contact-form>
+    
+    <h2 *ngIf="!displayForm">Message Sent</h2>
+    <app-contact-form *ngIf="displayForm" (sendContact)="sendt($emit)"></app-contact-form>
 </div>

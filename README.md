@@ -8,5 +8,4 @@ After cloning the project remember to run "npm install". If you do not have angu
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Login for test app:
-username: abc
-password: 123
+username: abc   password: 123

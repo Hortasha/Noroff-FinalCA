@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
+  hidden: boolean = true;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -23,5 +24,9 @@ export class NavigationComponent implements OnInit {
 
   goCards() {
     this.router.navigate(['cards']);
+  }
+
+  navToggle() {
+    this.hidden = !this.hidden;
   }
 }

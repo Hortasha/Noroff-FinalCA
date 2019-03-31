@@ -2,7 +2,12 @@
     <div class="navigation-title">
         <h1 (click)="goCards()"><i class="fas fa-gamepad"></i> Magic: Card Game</h1>
     </div>
-    <div class="navigation-links">
+
+    <div class="navigation-burger">
+        <i class="fas fa-bars" (click)="navToggle()"></i>
+    </div>
+
+    <div class="navigation-links" [ngClass]="{'navigation-show': !hidden }">
         <button (click)="goCards()" [ngClass]="{'navigation-links-active': (router.url == '/cards')}">Cards</button>
         <button (click)="goAbout()" [ngClass]="{'navigation-links-active': (router.url == '/about')}">About</button>
         <button (click)="goContact()" [ngClass]="{'navigation-links-active': (router.url == '/contact')}">Contact</button>

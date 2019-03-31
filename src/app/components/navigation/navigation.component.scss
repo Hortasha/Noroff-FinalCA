@@ -1,14 +1,13 @@
 .navigation {
     background-color: #F96167;
-    padding: 20px 50px;
-
     font-family: 'Raleway', sans-serif;
 
     &-title {
         display: inline-block;
-        width: 50%;
+        width: 48%;
         color: white;
         padding-top: 20px;
+        padding-left: 2%;
 
         h1 {
             cursor: pointer;
@@ -19,11 +18,12 @@
             color: #FCE77D;
         }
     }
-
+    
     &-links {
         display: inline-block;
         text-align: right;
-        width: 50%;
+        width: 48%;
+        padding-right: 2%;
 
         & button {
             border: none;
@@ -44,7 +44,49 @@
         }
 
         &-active {
+            padding-right: 20px;
             border-bottom: 3px #FCE77D solid !important;
+        }
+    }
+
+    &-burger {
+        cursor: pointer;
+        font-size: 30px;
+        color: #FCE77D;
+        display: hidden;
+        text-align: right;
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navigation {
+        &-title {
+            width: 88%;
+        }
+        &-burger {
+            width: 8%;
+            display: inline-block;
+        }
+
+        &-links {
+            //display: none;
+            display: none;
+            width: 100%;
+            
+            & button {
+                width: 100%;
+                background-color:#FCE77D;
+                color: #F96167;
+
+                &:hover {
+                    border: none;
+                }
+            }
+        }
+        
+        &-show {
+            display: inline-block;
         }
     }
 }

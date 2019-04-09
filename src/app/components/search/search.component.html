@@ -10,7 +10,7 @@
 
   <input 
     [checked]="searchParameters.rarity[1]"
-    (change)="(searchParameters.rarity[1] === '') ? searchParameters.rarity[1] = 'common' : searchParameters.rarity[1] = ''"
+    (change)="(searchParameters.rarity[1] === '') ? searchParameters.rarity[1] = 'uncommon' : searchParameters.rarity[1] = ''"
     type="checkbox"
     id="uncommon"
     checked>
@@ -18,7 +18,7 @@
 
   <input
     [checked]="searchParameters.rarity[2]"
-    (change)="(searchParameters.rarity[2] === '') ? searchParameters.rarity[2] = 'common' : searchParameters.rarity[2] = ''"
+    (change)="(searchParameters.rarity[2] === '') ? searchParameters.rarity[2] = 'rare' : searchParameters.rarity[2] = ''"
     type="checkbox"
     id="rare"
     checked>
@@ -26,7 +26,7 @@
 
   <input
     [checked]="searchParameters.rarity[3]"
-    (change)="(searchParameters.rarity[3] === '') ? searchParameters.rarity[3] = 'common' : searchParameters.rarity[3] = ''"
+    (change)="(searchParameters.rarity[3] === '') ? searchParameters.rarity[3] = 'mythic' : searchParameters.rarity[3] = ''"
     type="checkbox"
     id="mythic"
     checked>

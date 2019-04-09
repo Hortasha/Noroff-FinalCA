@@ -18,4 +18,7 @@
       [card]="card">
     </app-card>
   </div>
+  <div *ngIf="allCards.length === 0 && !loading">
+    <p>No cards found</p>
+  </div>
 </div>
